@@ -87,3 +87,7 @@ Security tokens are stored in the browser's localStorage.
 Error traces and user tracking data are not stored locally; they are sent to the server.
 
 This extension primarily interacts with external servers to fetch and send data, and it uses the browser's storage mechanisms (sessionStorage and localStorage) to store certain types of data temporarily or persistently.
+
+Summary:
+Both chrome.storage.local and chrome.storage.session will be removed automatically when the extension is uninstalled from the browser.
+If you reinstall the extension, it will not have access to the previous data, as it has been deleted during the removal process.
