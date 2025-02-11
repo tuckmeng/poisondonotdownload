@@ -71,3 +71,19 @@ Response details (redirects, HTTP headers, and errors).
 3. Is Any Data Saved as a File on the Laptop?
 No, neither script writes data to actual files on the user's filesystem.
 The data is stored inside browser storage (chrome.storage.local, chrome.storage.session), which is not directly accessible as a file in the usual file system.
+
+Summary from DS
+Data Transferred to External Servers:
+Tracking data (e.g., product page views, coupon usage) is sent to https://api.tnagofsg.com/rest/v1.
+Coupon and deal data is fetched from https://api.tnagofsg.com/rest/v1.
+Price trend data is fetched from https://api.tnagofsg.com/rest/v2.
+Error traces are sent to https://api.tnagofsg.com/rest/v1.
+Security tokens are fetched from https://api.tnagofsg.com/rest/v1.
+
+Data Downloaded and Storage Locations:
+Coupon and deal data is stored in the browser's sessionStorage.
+Price trend data is stored in memory and is not persisted to disk.
+Security tokens are stored in the browser's localStorage.
+Error traces and user tracking data are not stored locally; they are sent to the server.
+
+This extension primarily interacts with external servers to fetch and send data, and it uses the browser's storage mechanisms (sessionStorage and localStorage) to store certain types of data temporarily or persistently.
